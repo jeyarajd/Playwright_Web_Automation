@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learning Playground</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 2rem; }
+      nav { margin-bottom: 1.5rem; }
+      a { display: inline-block; margin-right: 1rem; }
+      [data-sidebar] { display: block; }
+      button { margin: 0.5rem 0; }
+    </style>
+  </head>
+  <body>
+    <button id="theme-toggle" type="button">Toggle theme</button>
+    <button id="sidebar-toggle" type="button">Open sidebar</button>
+    <aside data-sidebar>
+      <a href="/forms.html">Forms & Inputs</a>
+      <a href="/buttons.html">Buttons</a>
+      <a href="/windows.html">Windows</a>
+    </aside>
+
+    <h1>Learning Playground</h1>
+    <p>Use this demo app to explore the same Patterns as the Playwright learning framework.</p>
+
+    <script>
+      const html = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      toggle.addEventListener('click', () => {
+        const nextTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        html.setAttribute('data-theme', nextTheme);
+      });
+    </script>
+  </body>
+</html>

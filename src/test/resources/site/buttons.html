@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buttons & Actions</title>
+  </head>
+  <body>
+    <button id="theme-toggle" type="button">Toggle theme</button>
+    <button id="sidebar-toggle" type="button">Open sidebar</button>
+    <aside data-sidebar>
+      <a href="/index.html">Home</a>
+      <a href="/forms.html">Forms & Inputs</a>
+      <a href="/windows.html">Windows</a>
+    </aside>
+
+    <h1>Buttons & Actions</h1>
+    <button id="primary-btn" type="button">Primary action</button>
+    <button id="secondary-btn" type="button">Secondary action</button>
+    <button id="counter-btn" type="button">Counter</button>
+    <p id="button-output">No button clicked yet</p>
+
+    <script>
+      const output = document.getElementById('button-output');
+      document.getElementById('primary-btn').addEventListener('click', () => {
+        output.textContent = 'Primary button clicked';
+      });
+      document.getElementById('secondary-btn').addEventListener('click', () => {
+        output.textContent = 'Secondary button clicked';
+      });
+      let count = 0;
+      document.getElementById('counter-btn').addEventListener('click', () => {
+        count += 1;
+        output.textContent = 'Button clicked ' + count + ' times';
+      });
+      document.getElementById('theme-toggle').addEventListener('click', () => {
+        document.documentElement.setAttribute('data-theme', document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    </script>
+  </body>
+</html>
